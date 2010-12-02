@@ -1,0 +1,5 @@
+name: 'Plugin Class Tester plugin'
+description: 'A test plugin for testing the plugin_class attribute'
+id: PClassTester
+version: 1.0.0
+plugin_class: PClassTester
