@@ -32,8 +32,13 @@ sub post_init {
     return if __PACKAGE__->is_disabled();
 
     foreach my $c ( MT::Component->select(), MT::Plugin->select() ) {
-        my $pclass_cfg = $c->registry('plugin_class');
-        bless $c, $pclass_cfg if $pclass_cfg;
+        my $plugin_class = eval { $c->registry('plugin_class') }
+                        || eval { $c->{registry}{plugin_class} };
+        if ($plugin_class) {
+            eval "require $plugin_class;";
+            die $@ if $@;
+            bless $c, $plugin_class;
+        }
     }
 }
 
