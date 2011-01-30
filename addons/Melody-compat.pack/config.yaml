@@ -10,3 +10,11 @@ init_app: $MelodyCompat::Melody::Compat::init_app
 
 callbacks:
     post_init: $MelodyCompat::Melody::Compat::post_init
+
+config_settings:
+    JQueryURL:
+        handler: $MelodyCompat::Melody::ConfigDirectives::_jquery_handler
+tags:
+    function:
+        JQueryURL: $MelodyCompat::Melody::Tags::_hdlr_jquery_url
+
