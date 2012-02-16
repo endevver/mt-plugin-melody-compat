@@ -1,10 +1,10 @@
 name: 'Melody Compatibility Layer for Movable Type'
-description: 'An addon for MT 4.x that aims to provide seamless compatiblity with all Melody plugins'
+description: 'An addon for MT 4.x that aims to provide seamless compatibility with all Melody plugins'
 id: MelodyCompat
 key: MelodyCompat
 author_link: http://endevver.com/
 author_name: Endevver
-version: 1.0.0
+version: 1.0.1
 
 init_app: $MelodyCompat::Melody::Compat::init_app
 
