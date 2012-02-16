@@ -11,12 +11,14 @@ sub init_app {
     return if $app->can('query');
 
     # Install definition for MT::App::query() as it is in Melody
-    *MT::App::query = sub {
+    *{ref($app)."::query"} = sub {
         my $self    = shift;
         my ($query) = @_;
         return defined $query ? $self->{query} = $query
                               : $self->{query};
-    }
+    };
+    die "Could not install query method into ".(ref $app)
+        unless $app->can('query');
 }
 
 # This callback is invoked when MT is initialized and ready to run.
