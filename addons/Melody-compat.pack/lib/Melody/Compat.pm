@@ -5,8 +5,7 @@ Melody::Compat->mk_classdata( is_disabled => 0 );
 
 sub init_app {
     my ( $cb, $app ) = @_;
-    return if is_disabled();
-
+    return if __PACKAGE__->is_disabled();
     # Operate only on MT::App subclassed apps that can't query()
     return unless $app and $app->isa('MT::App');
     return if $app->can('query');
