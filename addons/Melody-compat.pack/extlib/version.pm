@@ -1,4 +1,4 @@
-#!perl -w
+#!/usr/local/bin/perl -w
 package version;
 
 use 5.005_04;
