@@ -1,5 +1,5 @@
 name: 'Melody Compatibility Layer for Movable Type'
-version: 1.0.2
+version: 1.0.3
 description: 'An addon for MT 4.x that aims to provide seamless compatibility with all Melody plugins'
 id: MelodyCompat
 key: MelodyCompat
